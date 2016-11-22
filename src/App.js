@@ -1,11 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
+import sampleToDos from './sample-todos.js'
 // used npm install milligram -S to add in a style sheet
 import '../node_modules/milligram/dist/milligram.min.css'
 import ToDo from './components/ToDo'
 import AddBar from './components/AddBar.js'
 
 class App extends Component {
+
+  constructor() {
+    super();
+
+    this.loadSamples = this.loadSamples.bind(this);
+
+    // initial state
+    this.state = {
+      todos: {}
+    }
+  }
+
+  componentWillMount() {
+    this.loadSamples();
+  }
+
+  loadSamples() {
+    this.setState({
+      todos: sampleToDos
+    })
+  }
+
   render() {
     return (
       <div className="container">
