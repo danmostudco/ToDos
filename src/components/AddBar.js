@@ -1,5 +1,4 @@
 import React from 'react';
-import './AddBar.css';
 
 class AddBar extends React.Component {
 	render() {
