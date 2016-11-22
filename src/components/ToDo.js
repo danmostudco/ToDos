@@ -3,14 +3,40 @@ import React from 'react';
 class ToDo extends React.Component {
 	render() {
 
-		var ToDoStyle = {
+		var boxStyle = {
 			  background: "#a165c6", /* Old browsers */
-			  color: "white"
+			  color: "white",
+			  borderRadius: ".25em",
+			  height: "75px",
+			  marginBottom: "20px",
+			  display: "flex",
+			  alignItems: "center"
 			}
 
+			var buttonStyle = {
+				color: "white",
+				border: "white 1px solid",
+				marginLeft: "1em"
+			}
+
+			var textStyle = {
+				margin: "0 0 .3em .5em"
+			}
+
+			var deleteStyle = {
+				margin: "0 0 .3em .5em",
+				marginLeft: "auto",
+				marginRight: "1em"
+			}
+
+
 		return (
-			<div className="ToDo" style={ToDoStyle}>
-			<p> Hello I'm a simple todo</p>
+			<div className="ToDoBox" style={boxStyle}>
+					<button className="button-outline" style={buttonStyle}>Done</button>
+
+					<p style={textStyle}>Go to the store and pickup some groceries</p>
+
+					<a href="#" style={deleteStyle}>Delete</a>
 			</div>
 		)
 	}
