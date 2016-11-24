@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import sampleToDos from './sample-todos.js'
 // used npm install milligram -S to add in a style sheet
+
 import '../node_modules/milligram/dist/milligram.min.css'
-import ToDo from './components/ToDo'
-import AddBar from './components/AddBar.js'
+import UpcomingList from './components/UpcomingList.js'
+import AddBar from './components/AddBar'
 
 class App extends Component {
 
@@ -44,10 +45,9 @@ class App extends Component {
           <div className="column">
             <h3 className="center">Next Up</h3>
             <hr/>
-
-            <ToDo />
-            <ToDo />
-            <ToDo />
+            <UpcomingList
+              todos={this.state.todos}
+            />
 
           </div>
           <div className="column">

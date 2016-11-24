@@ -34,7 +34,7 @@ class ToDo extends React.Component {
 			<div className="ToDoBox" style={boxStyle}>
 					<button className="button-outline" style={buttonStyle}>Done</button>
 
-					<p style={textStyle}>Go to the store and pickup some groceries</p>
+					<p style={textStyle}>{this.props.details.title}</p>
 
 					<a href="#" style={deleteStyle}>Delete</a>
 			</div>
