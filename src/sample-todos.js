@@ -2,7 +2,7 @@
 module.exports = {
   todo1: {
     title: 'Go to the store and pick up groceries',
-    complete: false
+    complete: true
   },
 
   todo2: {

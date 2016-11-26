@@ -4,7 +4,7 @@ import sampleToDos from './sample-todos.js'
 // used npm install milligram -S to add in a style sheet
 
 import '../node_modules/milligram/dist/milligram.min.css'
-import UpcomingList from './components/UpcomingList.js'
+import List from './components/List.js'
 import AddBar from './components/AddBar'
 
 class App extends Component {
@@ -52,15 +52,21 @@ class App extends Component {
           <div className="column">
             <h3 className="center">Next Up</h3>
             <hr/>
-            <UpcomingList
+            <List
               todos={this.state.todos}
               completeToDo={this.completeToDo}
+              listComplete={false}
             />
 
           </div>
           <div className="column">
             <h3 className="center">Completed</h3>
             <hr/>
+              <List
+              todos={this.state.todos}
+              completeToDo={this.completeToDo}
+              listComplete={true}
+            />
 
           </div>
         </div>
