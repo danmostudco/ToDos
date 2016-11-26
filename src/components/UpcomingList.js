@@ -10,7 +10,12 @@ class UpcomingList extends React.Component {
 
 	renderToDo(key) {
 		return (
-			<ToDo key={key} details={this.props.todos[key]}/>
+			<ToDo
+				key={key}
+				index={key}
+				details={this.props.todos[key]}
+				completeToDo={this.props.completeToDo}
+			/>
 		)
 	}
 

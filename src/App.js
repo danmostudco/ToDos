@@ -13,6 +13,7 @@ class App extends Component {
     super();
 
     this.loadSamples = this.loadSamples.bind(this);
+    this.completeToDo = this.completeToDo.bind(this);
 
     // initial state
     this.state = {
@@ -22,6 +23,12 @@ class App extends Component {
 
   componentWillMount() {
     this.loadSamples();
+  }
+
+  completeToDo(key) {
+    const todos = {...this.state.todos}
+    todos[key].complete = true;
+    this.setState({todos})
   }
 
   loadSamples() {
@@ -47,6 +54,7 @@ class App extends Component {
             <hr/>
             <UpcomingList
               todos={this.state.todos}
+              completeToDo={this.completeToDo}
             />
 
           </div>

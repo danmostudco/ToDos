@@ -32,7 +32,7 @@ class ToDo extends React.Component {
 
 		return (
 			<div className="ToDoBox" style={boxStyle}>
-					<button className="button-outline" style={buttonStyle}>Done</button>
+					<button className="button-outline" style={buttonStyle} onClick={ () => this.props.completeToDo(this.props.index) }>Done</button>
 
 					<p style={textStyle}>{this.props.details.title}</p>
 
