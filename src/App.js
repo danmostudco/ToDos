@@ -14,6 +14,7 @@ class App extends Component {
 
     this.loadSamples = this.loadSamples.bind(this);
     this.completeToDo = this.completeToDo.bind(this);
+    this.addToDo =  this.addToDo.bind(this);
 
     // initial state
     this.state = {
@@ -23,6 +24,15 @@ class App extends Component {
 
   componentWillMount() {
     this.loadSamples();
+  }
+
+  addToDo(todo) {
+    const todos = {...this.state.todos}
+
+    const timestamp = Date.now();
+    todos[`todo${timestamp}`] = todo;
+    // set state
+    this.setState({todos: todos});
   }
 
   completeToDo(key) {
@@ -43,7 +53,7 @@ class App extends Component {
         <div className="row">
           <div className="column column-50 column-offset-25">
 
-            <AddBar />
+            <AddBar addToDo={this.addToDo}/>
 
           </div>
         </div>
