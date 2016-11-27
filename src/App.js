@@ -6,6 +6,7 @@ import sampleToDos from './sample-todos.js'
 import '../node_modules/milligram/dist/milligram.min.css'
 import List from './components/List.js'
 import AddBar from './components/AddBar'
+import base from './base'
 
 class App extends Component {
 
@@ -23,7 +24,15 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.loadSamples();
+    this.ref = base.syncState('dansToDos', {
+      context: this,
+      state: 'todos'
+    })
+    //this.loadSamples();
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   addToDo(todo) {

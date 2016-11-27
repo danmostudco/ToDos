@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "milligram": "^1.2.0",
+    "re-base": "^2.3.3",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
   },
