@@ -20,7 +20,7 @@ class UpcomingList extends React.Component {
 						key={key}
 						index={key}
 						details={details}
-						completeToDo={this.props.completeToDo}
+						toggleToDo={this.props.toggleToDo}
 					/>
 				)
 			}

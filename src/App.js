@@ -14,7 +14,7 @@ class App extends Component {
     super();
 
     this.loadSamples = this.loadSamples.bind(this);
-    this.completeToDo = this.completeToDo.bind(this);
+    this.toggleToDo = this.toggleToDo.bind(this);
     this.addToDo =  this.addToDo.bind(this);
 
     // initial state
@@ -44,9 +44,9 @@ class App extends Component {
     this.setState({todos: todos});
   }
 
-  completeToDo(key) {
+  toggleToDo(key) {
     const todos = {...this.state.todos}
-    todos[key].complete = true;
+    todos[key].complete = !todos[key].complete; // switcheroo
     this.setState({todos})
   }
 
@@ -73,7 +73,7 @@ class App extends Component {
             <hr/>
             <List
               todos={this.state.todos}
-              completeToDo={this.completeToDo}
+              toggleToDo={this.toggleToDo}
               listComplete={false}
             />
 
@@ -83,7 +83,7 @@ class App extends Component {
             <hr/>
               <List
               todos={this.state.todos}
-              completeToDo={this.completeToDo}
+              toggleToDo={this.toggleToDo}
               listComplete={true}
             />
 
