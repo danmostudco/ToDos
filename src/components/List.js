@@ -21,6 +21,7 @@ class UpcomingList extends React.Component {
 						index={key}
 						details={details}
 						toggleToDo={this.props.toggleToDo}
+						removeToDo={this.props.removeToDo}
 					/>
 				)
 			}

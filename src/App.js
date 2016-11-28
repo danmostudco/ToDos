@@ -16,6 +16,7 @@ class App extends Component {
     this.loadSamples = this.loadSamples.bind(this);
     this.toggleToDo = this.toggleToDo.bind(this);
     this.addToDo =  this.addToDo.bind(this);
+    this.removeToDo = this.removeToDo.bind(this);
 
     // initial state
     this.state = {
@@ -50,6 +51,12 @@ class App extends Component {
     this.setState({todos})
   }
 
+  removeToDo(key) {
+    const todos = {...this.state.todos};
+    todos[key] = null;
+    this.setState({todos: todos});
+  }
+
   loadSamples() {
     this.setState({
       todos: sampleToDos
@@ -74,6 +81,7 @@ class App extends Component {
             <List
               todos={this.state.todos}
               toggleToDo={this.toggleToDo}
+              removeToDo={this.removeToDo}
               listComplete={false}
             />
 
@@ -84,6 +92,7 @@ class App extends Component {
               <List
               todos={this.state.todos}
               toggleToDo={this.toggleToDo}
+              removeToDo={this.removeToDo}
               listComplete={true}
             />
 

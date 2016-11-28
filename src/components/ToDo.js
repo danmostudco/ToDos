@@ -20,13 +20,13 @@ class ToDo extends React.Component {
 			}
 
 		var textStyle = {
-				margin: "0 0 .3em .5em"
+				margin: "0 0 .3em 1.25em"
 			}
 
 		var deleteStyle = {
-				margin: "0 0 .3em .5em",
+				color: "#5c3872",
 				marginLeft: "auto",
-				marginRight: "1em"
+				marginRight: "2em"
 			}
 
 		const label = !this.props.details.complete ? "Done" : "Undo"
@@ -37,7 +37,7 @@ class ToDo extends React.Component {
 
 					<p style={textStyle}>{this.props.details.title}</p>
 
-					<a href="#" style={deleteStyle}>Delete</a>
+					<a href="#" onClick={ () => this.props.removeToDo(this.props.index) } style={deleteStyle}>Delete</a>
 			</div>
 		)
 	}
