@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.ref = base.syncState('dansToDos', {
+    this.ref = base.syncState(this.props.params.listId, {
       context: this,
       state: 'todos'
     })
